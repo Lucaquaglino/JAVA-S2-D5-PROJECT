@@ -39,7 +39,7 @@ public class CatalogoBibliotecario {
 			switch (scelta) {
 			case 1:
 				if (!datiCaricati) {
-					System.out.println("Devi caricare i dati prima di poter aggiungere un libro.");
+					System.err.println("Devi caricare i dati prima di poter aggiungere un libro.");
 					break;
 				}
 				try {
@@ -68,13 +68,13 @@ public class CatalogoBibliotecario {
 
 					catalogo.add(libro);
 				} catch (Exception e) {
-					System.out.println("Errore durante l'aggiunta del libro: " + e.getMessage());
+					System.err.println("Errore durante l'aggiunta del libro: " + e.getMessage());
 				}
 				break;
 
 			case 2:
 				if (!datiCaricati) {
-					System.out.println("Devi caricare i dati prima di poter aggiungere una rivista.");
+					System.err.println("Devi caricare i dati prima di poter aggiungere una rivista.");
 					break;
 				}
 				try {
@@ -101,13 +101,13 @@ public class CatalogoBibliotecario {
 
 					catalogo.add(rivista);
 				} catch (Exception e) {
-					System.out.println("Errore durante l'aggiunta della rivista: " + e.getMessage());
+					System.err.println("Errore durante l'aggiunta della rivista: " + e.getMessage());
 				}
 				break;
 
 			case 3:
 				if (!datiCaricati) {
-					System.out.println("Devi caricare i dati prima di poter rimuovere un elemento.");
+					System.err.println("Devi caricare i dati prima di poter rimuovere un elemento.");
 					break;
 				}
 				try {
@@ -116,12 +116,12 @@ public class CatalogoBibliotecario {
 
 					catalogo.removeIf(elemento -> elemento.getCodiceISBN().equals(codiceISBNDaRimuovere));
 				} catch (Exception e) {
-					System.out.println("Errore durante l'eliminazione dell' elemento: " + e.getMessage());
+					System.err.println("Errore durante l'eliminazione dell' elemento: " + e.getMessage());
 				}
 				break;
 			case 4:
 				if (!datiCaricati) {
-					System.out.println("Devi caricare i dati prima di poter eliminare un elemento.");
+					System.err.println("Devi caricare i dati prima di poter eliminare un elemento.");
 					break;
 				}
 				System.out.println("Inserisci il codice ISBN da cercare:");
@@ -132,7 +132,7 @@ public class CatalogoBibliotecario {
 						.collect(Collectors.toList());
 
 				if (elementiFiltrati.isEmpty()) {
-					System.out.println("Nessun elemento trovato con il codice ISBN: " + codiceISBNDaTrovare);
+					System.err.println("Nessun elemento trovato con il codice ISBN: " + codiceISBNDaTrovare);
 				} else {
 					elementiFiltrati.forEach(Elemento::stampaInformazioni);
 				}
@@ -140,7 +140,7 @@ public class CatalogoBibliotecario {
 
 			case 5:
 				if (!datiCaricati) {
-					System.out.println("Devi caricare i dati prima di poter eseguire la ricerca.");
+					System.err.println("Devi caricare i dati prima di poter eseguire la ricerca.");
 					break;
 				}
 				try {
@@ -153,20 +153,20 @@ public class CatalogoBibliotecario {
 							.collect(Collectors.toList());
 
 					if (elementiPerAnno.isEmpty()) {
-						System.out.println(
+						System.err.println(
 								"Nessun elemento trovato per l'anno di pubblicazione: " + annoPubblicazioneDaTrovare);
 					} else {
 						elementiPerAnno.forEach(Elemento::stampaInformazioni);
 					}
 				} catch (InputMismatchException e) {
-					System.out.println("Errore: devi inserire un numero per l'anno di pubblicazione.");
+					System.err.println("Errore: devi inserire un numero per l'anno di pubblicazione.");
 					scanner.nextLine();
 				}
 				break;
 
 			case 6:
 				if (!datiCaricati) {
-					System.out.println("Devi caricare i dati prima di poter eseguire la ricerca.");
+					System.err.println("Devi caricare i dati prima di poter eseguire la ricerca.");
 					break;
 				}
 				System.out.println("Inserisci l'autore da cercare:");
@@ -178,7 +178,7 @@ public class CatalogoBibliotecario {
 						.collect(Collectors.toList());
 
 				if (libriFiltrati.isEmpty()) {
-					System.out.println("Nessun libro trovato con l'autore: " + autoreDaTrovare);
+					System.err.println("Nessun libro trovato con l'autore: " + autoreDaTrovare);
 				} else {
 					libriFiltrati.forEach(libroFiltrato -> libroFiltrato.stampaInformazioni());
 				}
@@ -188,14 +188,14 @@ public class CatalogoBibliotecario {
 			case 7:
 
 				if (!datiCaricati) {
-					System.out.println("Devi caricare i dati prima di poterli salvare.");
+					System.err.println("Devi caricare i dati prima di poterli salvare.");
 					break;
 				}
 				try {
 					salvaSuDisco(FILE_NAME);
 					System.out.println("Salvataggio su disco completato.");
 				} catch (IOException e) {
-					System.out.println("Errore durante il salvataggio su disco: " + e.getMessage());
+					System.err.println("Errore durante il salvataggio su disco: " + e.getMessage());
 				}
 				break;
 
@@ -205,7 +205,7 @@ public class CatalogoBibliotecario {
 					datiCaricati = true;
 					System.out.println("Caricamento da disco completato.");
 				} catch (IOException e) {
-					System.out.println("Errore durante il caricamento da disco: " + e.getMessage());
+					System.err.println("Errore durante il caricamento da disco: " + e.getMessage());
 				}
 				break;
 
@@ -214,7 +214,7 @@ public class CatalogoBibliotecario {
 				break;
 
 			default:
-				System.out.println("Opzione non valida.");
+				System.err.println("Opzione non valida.");
 				break;
 			}
 
