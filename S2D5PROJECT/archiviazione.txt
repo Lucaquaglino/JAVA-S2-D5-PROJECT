@@ -1,3 +1,3 @@
-LIBRO-Codice ISBN: 1, Titolo: 1, Anno di Pubblicazione: 1, Numero Pagine: 1, Autore: 1, Genere: 1
-LIBRO-Codice ISBN: 23, Titolo: 23, Anno di Pubblicazione: 23, Numero Pagine: 23, Autore: 23, Genere: 23
-RIVISTA-Codice ISBN: 24, Titolo: 24, Anno di Pubblicazione: 24, Numero Pagine: 24, Tipo Rivista: MENSILE
+LIBRO-Codice ISBN: 1, Titolo: harry potter , Anno di Pubblicazione: 2000, Numero Pagine: 500, Autore: jk rowling, Genere: fantasy
+LIBRO-Codice ISBN: 2, Titolo: il signore degli anelli, Anno di Pubblicazione: 1900, Numero Pagine: 900, Autore: tolkien, Genere: fantasy
+RIVISTA-Codice ISBN: 4, Titolo: time, Anno di Pubblicazione: 2023, Numero Pagine: 90, Tipo Rivista: MENSILE
