@@ -1,0 +1,3 @@
+LIBRO-Codice ISBN: 1, Titolo: 1, Anno di Pubblicazione: 1, Numero Pagine: 1, Autore: 1, Genere: 1
+LIBRO-Codice ISBN: 23, Titolo: 23, Anno di Pubblicazione: 23, Numero Pagine: 23, Autore: 23, Genere: 23
+RIVISTA-Codice ISBN: 24, Titolo: 24, Anno di Pubblicazione: 24, Numero Pagine: 24, Tipo Rivista: MENSILE
